@@ -28,7 +28,7 @@ GROUP BY
     "Product_Category"
 ORDER BY 
     Total_Sales DESC
-	  "THE PRODUCT CATEGORY WITH THE HIGHEST SALES IS TECHNOLOGY WITH 5,984,248.17547321 SALES"
+	  "THE PRODUCT CATEGORY WITH THE HIGHEST SALES IS TECHNOLOGY WITH $5,984,248 SALES"
 
 
 2. Top three and Bottom three regions in terms of sales
@@ -43,7 +43,12 @@ GROUP BY
 ORDER BY
 	TOP_3_Total_Sales DESC
 
-	  "Bottom three Total Sales"
+	  Region	Top_3_Total_Sales
+	1. West		$3,597,549.3
+	2  Ontario	$3,063,212.4
+	3. Prarie	$2,837,304.6
+
+"Bottom three Total Sales"
 SELECT TOP 3
      region,
 	 Sum(sales) AS Bottom_3_Total_Sales
@@ -52,6 +57,11 @@ FROM
 GROUP BY
 	Region
 ORDER BY BOTTOM_3_Total_Sales ASC
+
+	Region			Bottom_3_Total_Sales
+     1.	Nunavut			$116,376.5
+     2. Northwest Territories	$800,847.3
+     3. Yukon			$975,867.4
 
 
 3. Total sales of appliances in Ontario 
@@ -64,6 +74,8 @@ WHERE
 	Province = 'Ontario'
 	AND
 	Product_Sub_Category = 'Appliances'
+	"Total sales of appliances in Ontario is $202,346.8"
+
 
 4. Advise for the management of KMS on what to do to increase the revenue from the bottom 10 customers--------
 
@@ -78,9 +90,9 @@ ORDER BY
 	Total_Sales ASC
 
 Advice for Increasing Revenue from Bottom 10 Customers:
-  i.   Offer targeted promotions and personalized product recommendations.
-  ii.  Engage them with loyalty programs or bundle deals to encourage larger purchases.
-  iii. Conduct customer feedback surveys to understand their low engagement and adapt offerings.
+  i.   Offer targeted promotions and_personalized product recommendations.
+  ii.  Engage them with loyalty programs_or_bundle deals to encourage larger purchases.
+  iii. Conduct customer feedback surveys to understand their low engagement_and_adapt offerings.
   iv.  Ensure proactive customer service to build stronger relationships.-------
 
 
@@ -95,9 +107,10 @@ GROUP BY
 	"Ship_Mode"
 ORDER BY
 	Highest_Shipping_Cost DESC
-	
+	" The shipping mode with the Highest_Shipping_Cost is Delivery Truck with $51,971.9 incurred
 
-6. The most valuable customers and their products or services
+
+6. The most valuable customers and_their products or services
 
 SELECT TOP 10 
     "Customer_Name",
@@ -115,6 +128,12 @@ GROUP BY
     "Customer_Name"
 ORDER BY 
     Total_Sales DESC;
+
+	"The 3 most valuable customers are"
+Customer_Name		Total_Sales		Product_Categories
+Emily Phan		$117,124.4	Furniture, Office Supplies, Technology, 
+Deborah Brumfield	$97,433.1	Furniture, Office Supplies, Technology, 
+Roy Skaria		$92,542.1	Furniture, Office Supplies, Technology, 
 
 
 7. Small business customer with the highest sales?
@@ -173,7 +192,7 @@ ORDER BY
 	Most_Profitable DESC
 
 
-10. The customer which returned items, and their segment
+10. The customer which returned items, and_their segment
 
 Select
 Distinct o.[Customer_Name], [Customer_Segment]
@@ -184,7 +203,9 @@ On o.[Order_id] = os. [Order_id]
 Where os.[Status] = 'Returned'
 
 
-11. If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer 
+11. If the delivery truck is the most economical but the slowest shipping method
+and_Express Air is the fastest but the most expensive one, do you think the company
+appropriately spent shipping costs based on_the Order Priority? Explain your answer 
 
 
 SELECT 
@@ -201,18 +222,11 @@ ORDER BY
     "Order_Priority", 
 	"Ship_Mode"; 
 
----How to interpret:
+How to interpret:
 
----High-priority orders should ideally use Express Air more frequently.
+	- High-priority orders should ideally use Express Air more frequently.
 
----Low-priority orders should lean toward Delivery Truck (economical).
+	- Low-priority orders should lean toward Delivery Truck (economical).
 
---If high-cost methods are used for low-priority orders, this suggests inefficient shipping spend.
+	- If high-cost methods are used for low-priority orders, this suggests inefficient shipping spend.
 Uploading KMSSqlCaseStudy.sql…]()
-
-- `notebooks/`: Jupyter notebook or Excel file.
-- `visuals/`: Charts, screenshots.
-
-## ✅ What I Learned
-- Bullet 1
-- Bullet 2
